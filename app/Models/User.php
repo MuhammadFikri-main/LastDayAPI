@@ -44,4 +44,19 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
+
+    public function productivityRankings()
+    {
+        return $this->hasOne(ProductivityRanking::class);
+    }
 }
